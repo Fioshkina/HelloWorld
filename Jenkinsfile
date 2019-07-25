@@ -1,12 +1,12 @@
 pipeline {
     agent any
-
+    tools {
+        maven 'maven:3.5.4'
+    }
     stages {
         stage('build') {
             steps {
-                withMaven(maven : 'maven:3.5.4') {
-                    sh 'mvn --version'
-                }
+                sh 'mvn --version'
             }
         }
     }
